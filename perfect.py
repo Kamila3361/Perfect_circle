@@ -22,6 +22,7 @@ surface = pygame.Surface((surface_width, surface_height))
 GREEN = (0, 225, 0)
 RED = (225, 0, 0)
 YELLOW = (225, 225, 0)
+WHITE = (225, 225, 225)
 drawing = False
 last_pos = None
 main_dot = None
@@ -66,24 +67,24 @@ def show_score(x, y, score_value):
 def error_too_close(x, y):
     global allow_drawing
     allow_drawing = False
-    error_text = error_font.render('Too close to dot!', True, RED)
-    restart_text = font.render('Press \'R\' to try again!', True, RED)
+    error_text = error_font.render('Too close to dot!', True, WHITE)
+    restart_text = font.render('Press \'R\' to try again!', True, WHITE)
     screen.blit(error_text, (x, y))
     screen.blit(restart_text, (x+64, y+64))
 
 def error_too_slow(x, y):
     global allow_drawing
     allow_drawing = False
-    error_text = error_font.render('Too slow!', True, RED)
-    restart_text = font.render('Press \'R\' to try again!', True, RED)
+    error_text = error_font.render('Too slow!', True, WHITE)
+    restart_text = font.render('Press \'R\' to try again!', True, WHITE)
     screen.blit(restart_text, (x-10, y+64))
     screen.blit(error_text, (x, y))
 
 def error_draw_full_circle(x, y):
     global allow_drawing
     allow_drawing = False
-    error_text = error_font.render('Draw a full circle!', True, RED)
-    restart_text = font.render('Press \'R\' to try again!', True, RED)
+    error_text = error_font.render('Draw a full circle!', True, WHITE)
+    restart_text = font.render('Press \'R\' to try again!', True, WHITE)
     screen.blit(restart_text, (x+64, y+64))
     screen.blit(error_text, (x, y))
 
